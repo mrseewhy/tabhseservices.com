@@ -1,1 +1,104 @@
+/* =============================================================
+   TAB HSE Services — index.css  (Tailwind CSS v4)
+   Import order matters: Google Fonts → Tailwind → @theme → @layer
+   ============================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap");
+
 @import "tailwindcss";
+
+/* =============================================================
+   DESIGN TOKENS
+   In JSX Tailwind classes: bg-purple, text-green-bright, etc.
+   In CSS / style={{}}:     var(--color-purple), etc.
+   ============================================================= */
+@theme {
+
+    /* ── Fonts ─────────────────────────────────────────────── */
+    --font-display: "Barlow Condensed", ui-sans-serif, sans-serif;
+    --font-body: "Barlow", ui-sans-serif, sans-serif;
+    --font-mono: "DM Mono", ui-monospace, monospace;
+
+    /* ── Purple scale ───────────────────────────────────────── */
+    --color-purple-darkest: #2D0057;
+    --color-purple-dark: #4A0072;
+    --color-purple: #7B1FA2;
+    --color-purple-mid: #9C27B0;
+    --color-purple-light: #CE93D8;
+    --color-purple-tint: #F3E5F5;
+
+    /* ── Green scale ────────────────────────────────────────── */
+    --color-green-dark: #1B5E20;
+    --color-green: #2E7D32;
+    --color-green-mid: #43A047;
+    --color-green-bright: #66BB6A;
+    --color-green-light: #C8E6C9;
+    --color-green-tint: #E8F5E9;
+
+    /* ── Neutrals ───────────────────────────────────────────── */
+    --color-charcoal: #1A1A2E;
+    --color-grey-dark: #4A4A5A;
+    --color-grey-mid: #8A8A9A;
+    --color-grey-light: #D4D4E0;
+    --color-off-white: #F7F7FA;
+    --color-white: #FFFFFF;
+
+    /* ── Accent ─────────────────────────────────────────────── */
+    --color-gold: #FFB300;
+
+    /* ── Navbar (light theme) ───────────────────────────────── */
+    --color-nav-bg: #FFFFFF;
+    --color-nav-bg-scrolled: #FFFFFF;
+    --color-nav-border: #EEEEF4;
+    --color-nav-link: #4A4A5A;
+    --color-nav-link-hover: #7B1FA2;
+    --color-nav-link-active: #7B1FA2;
+    --color-nav-shadow: 0 2px 24px rgba(26, 26, 46, 0.07);
+
+    /* ── Dropdown ───────────────────────────────────────────── */
+    --color-dropdown-bg: #1A1A2E;
+    --color-dropdown-border: rgba(255, 255, 255, 0.09);
+    --color-dropdown-header: rgba(123, 31, 162, 0.28);
+
+    /* ── Shadows ────────────────────────────────────────────── */
+    --shadow-sm: 0 2px 8px rgba(123, 31, 162, 0.07);
+    --shadow-md: 0 8px 24px rgba(123, 31, 162, 0.13);
+    --shadow-lg: 0 20px 60px rgba(123, 31, 162, 0.17);
+}
+
+/* =============================================================
+   BASE STYLES
+   ============================================================= */
+@layer base {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-body);
+        background-color: var(--color-off-white);
+        color: var(--color-charcoal);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-display);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 1;
+    }
+}
