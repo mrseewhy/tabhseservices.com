@@ -1,13 +1,14 @@
 import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
 import Spinner from './components/Spinner.tsx'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './routes/Router.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={<Spinner />}>
-      <App />
+      <RouterProvider router={router} />
     </Suspense>
   </StrictMode>,
 )
