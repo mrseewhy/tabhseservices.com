@@ -1,215 +1,6 @@
-// import { useEffect, useState, type JSX } from "react";
-
-// interface StatPillProps {
-//     value: string;
-//     label: string;
-// }
-
-// function StatPill({ value, label }: StatPillProps) {
-//     return (
-//         <div className="flex flex-col items-center justify-center min-w-[100px] rounded-xl px-5 py-3.5
-//       bg-white/10 border border-white/20 backdrop-blur-xl">
-//             <span
-//                 className="font-display text-[1.65rem] font-black leading-none tracking-[-0.02em]"
-//                 style={{ color: "var(--color-green-bright)" }}
-//             >
-//                 {value}
-//             </span>
-//             <span
-//                 className="font-mono text-[0.58rem] uppercase tracking-[0.13em] text-white/55 mt-1 text-center leading-[1.4] whitespace-pre-line"
-//             >
-//                 {label}
-//             </span>
-//         </div>
-//     );
-// }
-
-// interface TrustBadgeProps {
-//     text: string;
-// }
-
-// function TrustBadge({ text }: TrustBadgeProps) {
-//     return (
-//         <div className="flex items-center gap-2 rounded-full px-4 py-1.5
-//       bg-[rgba(46,125,50,0.35)] border border-[rgba(102,187,106,0.35)]">
-//             <svg viewBox="0 0 12 12" className="w-3 h-3 shrink-0">
-//                 <path
-//                     d="M2 6l3 3 5-5"
-//                     stroke="#66BB6A"
-//                     strokeWidth={1.8}
-//                     strokeLinecap="round"
-//                     strokeLinejoin="round"
-//                 />
-//             </svg>
-//             <span className="font-mono text-[0.62rem] uppercase tracking-[0.12em] text-white/90">
-//                 {text}
-//             </span>
-//         </div>
-//     );
-// }
-
-// export default function HeroPreview(): JSX.Element {
-//     const [mounted, setMounted] = useState<boolean>(false);
-
-//     useEffect(() => {
-//         const t = setTimeout(() => setMounted(true), 120);
-//         return () => clearTimeout(t);
-//     }, []);
-
-//     const fadeUp = (delay: number): React.CSSProperties => ({
-//         transition: "opacity 0.7s ease, transform 0.7s ease",
-//         transitionDelay: `${delay}ms`,
-//         opacity: mounted ? 1 : 0,
-//         transform: mounted ? "translateY(0)" : "translateY(20px)",
-//     });
-
-//     return (
-//         <>
-//             {/* HERO */}
-//             <section className="relative flex items-center overflow-hidden min-h-screen">
-
-//                 {/* Background */}
-//                 <div className="absolute inset-0 z-0">
-//                     <img
-//                         // src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80&auto=format&fit=crop"
-//                         src="/img/hero-bg3.jpg"
-//                         alt="HSE workers"
-//                         className="absolute inset-0 w-full h-full object-cover object-center"
-//                     />
-
-//                     {/* Main overlay */}
-//                     <div
-//                         className="absolute inset-0"
-//                         style={{
-//                             background:
-//                                 "linear-gradient(110deg, rgba(74,0,114,0.90) 0%, rgba(26,26,46,0.70) 42%, rgba(26,26,46,0.25) 68%, rgba(26,26,46,0) 100%)",
-//                         }}
-//                     />
-
-//                     {/* Bottom overlay */}
-//                     <div
-//                         className="absolute bottom-0 left-0 right-0 h-[260px]"
-//                         style={{
-//                             background:
-//                                 "linear-gradient(to top, rgba(26,26,46,0.88) 0%, rgba(26,26,46,0.5) 50%, transparent 100%)",
-//                         }}
-//                     />
-//                 </div>
-
-//                 {/* Content wrapper */}
-//                 <div className="relative z-10 w-full">
-//                     <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8 py-14 pb-20">
-
-//                         <div className="max-w-[700px]">
-
-//                             {/* Trust badges */}
-//                             <div
-//                                 className="flex flex-wrap gap-2 mb-7"
-//                                 style={fadeUp(0)}
-//                             >
-//                                 <TrustBadge text="ISO Certified Standards" />
-//                                 <TrustBadge text="Regulatory Compliance" />
-//                                 {/* <TrustBadge text="Pan-African Reach" /> */}
-//                             </div>
-
-//                             {/* Headline */}
-//                             <h1
-//                                 style={fadeUp(100)}
-//                                 className="text-white font-black tracking-[-0.02em] leading-[0.97]
-//                   text-[clamp(2.6rem,5.5vw,4.8rem)]"
-//                             >
-//                                 Building Safer,{" "} <br />
-//                                 <span
-//                                     className="relative inline-block"
-//                                     style={{ color: "var(--color-green-bright)" }}
-//                                 >
-//                                     Healthier
-//                                     <span className="absolute left-0 right-0 -bottom-1 h-[1px] rounded-full bg-[rgba(102,187,106,0.4)]" />
-//                                 </span>{" "}<br />
-//                                 <span className="text-white/90">Workplaces.</span>
-//                             </h1>
-
-//                             {/* Sub-headline */}
-//                             <p
-//                                 style={fadeUp(200)}
-//                                 className="mt-5 max-w-[500px] text-white/60 leading-[1.75]
-//                   text-[clamp(0.95rem,1.8vw,1.1rem)]"
-//                             >
-//                                 TAB HSE Services is a premier consultancy partner helping organisations
-//                                 maintain compliance, protect employees, and embed a culture of
-//                                 environmental responsibility.
-//                             </p>
-
-//                             {/* CTA Buttons */}
-//                             <div
-//                                 className="flex flex-wrap gap-3 mt-8"
-//                                 style={fadeUp(300)}
-//                             >
-//                                 <a
-//                                     href="#services"
-//                                     className="flex items-center gap-2 rounded-md px-6 py-3.5
-//                     text-white font-display font-bold text-[0.88rem]
-//                     uppercase tracking-[0.12em]
-//                     shadow-[var(--shadow-btn)]"
-//                                     style={{ background: "var(--color-green)" }}
-//                                 >
-//                                     Explore Our Services
-//                                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth={2.2} className="w-4 h-4">
-//                                         <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-//                                     </svg>
-//                                 </a>
-
-//                                 <a
-//                                     href="#contact"
-//                                     className="flex items-center gap-2 rounded-md px-6 py-3.5
-//                     text-white font-display font-bold text-[0.88rem]
-//                     uppercase tracking-[0.12em]
-//                     backdrop-blur-md border border-white/20"
-//                                     style={{ background: "rgba(255,255,255,0.09)" }}
-//                                 >
-//                                     Get a Consultation
-//                                 </a>
-//                             </div>
-
-//                             {/* Stat Pills */}
-//                             <div
-//                                 className="flex flex-wrap gap-3 mt-10"
-//                                 style={fadeUp(400)}
-//                             >
-//                                 <StatPill value="RC" label={"9122058\nRegistered"} />
-//                                 <StatPill value="ISO" label={"Certified\nMethods"} />
-//                                 <StatPill value="100%" label={"Compliance\nFocused"} />
-//                                 <StatPill value="7+" label={"Service\nAreas"} />
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-
-//                 {/* Scroll Cue */}
-//                 {/* <div
-//                     style={fadeUp(600)}
-//                     className="absolute bottom-7 left-1/2 -translate-x-1/2
-//             flex flex-col items-center gap-1.5 z-10"
-//                 >
-//                     <span className="font-mono text-[0.55rem] uppercase tracking-[0.2em] text-white/45">
-//                         Scroll
-//                     </span>
-
-//                     <div className="w-5 h-8 rounded-full border border-white/35 flex items-start justify-center pt-1.5">
-//                         <div
-//                             className="w-1 h-2 rounded-full animate-bounce"
-//                             style={{ background: "var(--color-green-bright)" }}
-//                         />
-//                     </div>
-//                 </div> */}
-//             </section>
-
-
-//         </>
-//     );
-// }
 
 import { useEffect, useState, type JSX } from "react";
+import { Link } from "react-router-dom";
 
 // ─── Stat Pill ─────────────────────────────────────────────────────────────────
 
@@ -446,8 +237,8 @@ export default function Hero(): JSX.Element {
                         <div className="flex flex-wrap gap-3 mt-9" style={fadeUp(320)}>
 
                             {/* Primary — brand green */}
-                            <a
-                                href="#services"
+                            <Link
+                                to="our-services"
                                 className="group flex items-center gap-2.5 rounded-lg px-7 py-3.5
                                     text-white font-display font-bold text-[0.86rem]
                                     uppercase tracking-[0.12em]
@@ -464,11 +255,11 @@ export default function Hero(): JSX.Element {
                                 >
                                     <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </a>
+                            </Link>
 
                             {/* Secondary — ghost with purple tint on hover */}
-                            <a
-                                href="#contact"
+                            <Link
+                                to="contact-us"
                                 className="group flex items-center gap-2 rounded-lg px-7 py-3.5
                                     text-white/85 font-display font-bold text-[0.86rem]
                                     uppercase tracking-[0.12em]
@@ -489,7 +280,7 @@ export default function Hero(): JSX.Element {
                                 }}
                             >
                                 Get a Consultation
-                            </a>
+                            </Link>
                         </div>
 
                         {/* 

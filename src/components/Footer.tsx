@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer(): JSX.Element {
     return (
@@ -32,9 +33,9 @@ export default function Footer(): JSX.Element {
 
                     {/* Brand */}
                     <div>
-                        <h3 className="font-display font-bold text-white text-lg">
-                            TAB HSE Services
-                        </h3>
+                        <Link to={'/'}>
+                            <img src="/img/logo.png" alt="TAB HSE Services Logo" className="h-[50px]" />
+                        </Link>
                         <p className="mt-4 text-white/55 text-sm leading-[1.8] font-body">
                             Professional consultancy helping organisations maintain
                             compliance, protect employees, and foster environmental
@@ -52,17 +53,18 @@ export default function Footer(): JSX.Element {
                         </h4>
                         <ul className="space-y-3 text-sm text-white/65">
                             <li className="hover:text-white transition-colors">
-                                <a href="#">Health & Safety Audits</a>
+                                <Link to="our-services/consultancy">Consultancy Services</Link>
                             </li>
                             <li className="hover:text-white transition-colors">
-                                <a href="#">Environmental Compliance</a>
+                                <Link to="our-services/training">Training Services</Link>
                             </li>
                             <li className="hover:text-white transition-colors">
-                                <a href="#">ISO Management Systems</a>
+                                <Link to="our-services/technical">Technical Services</Link>
                             </li>
                             <li className="hover:text-white transition-colors">
-                                <a href="#">Risk Assessments</a>
+                                <Link to="our-services">See All Services</Link>
                             </li>
+
                         </ul>
                     </div>
 
@@ -76,13 +78,16 @@ export default function Footer(): JSX.Element {
                         </h4>
                         <ul className="space-y-3 text-sm text-white/65">
                             <li className="hover:text-white transition-colors">
-                                <a href="#">About Us</a>
+                                <Link to="about">About Us</Link>
                             </li>
                             <li className="hover:text-white transition-colors">
-                                <a href="#">Industries</a>
+                                <Link to="our-services">What We offer</Link>
                             </li>
                             <li className="hover:text-white transition-colors">
-                                <a href="#">Contact</a>
+                                <Link to="why-us">Why TAB HSE</Link>
+                            </li>
+                            <li className="hover:text-white transition-colors">
+                                <Link to="contact-us">Contact</Link>
                             </li>
                         </ul>
                     </div>
@@ -103,8 +108,8 @@ export default function Footer(): JSX.Element {
                                 Speak to our compliance specialists.
                             </p>
 
-                            <a
-                                href="#contact"
+                            <Link
+                                to="contact-us"
                                 className="inline-flex items-center justify-center rounded-lg px-5 py-2.5
                                     text-white font-display font-bold text-[0.75rem]
                                     uppercase tracking-[0.12em]
@@ -115,7 +120,7 @@ export default function Footer(): JSX.Element {
                                 }}
                             >
                                 Request Consultation
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -128,15 +133,15 @@ export default function Footer(): JSX.Element {
                     }}
                 >
                     <p className="text-white/45 text-xs font-mono tracking-[0.08em]">
-                        © {new Date().getFullYear()} TAB HSE Services. All rights reserved.
+                        © {new Date().getFullYear()} <Link to={'/'}>TAB HSE Services</Link>. All rights reserved.
                     </p>
 
                     <div className="flex gap-6 text-white/50 text-xs">
-                        <a href="#" className="hover:text-white transition-colors">
-                            Privacy Policy
+                        <a href="mailto:info@tabhseservices.com" className="hover:text-white transition-colors">
+                            info@tabhseservices.com
                         </a>
-                        <a href="#" className="hover:text-white transition-colors">
-                            Terms of Service
+                        <a href="tel:+2348127107336" className="hover:text-white transition-colors">
+                            +234 812 710 7336
                         </a>
                     </div>
                 </div>

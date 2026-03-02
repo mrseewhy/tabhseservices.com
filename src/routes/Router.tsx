@@ -31,13 +31,13 @@ export const router = createBrowserRouter([
                     {
                         path: "our-services", children: [
                             { index: true, element: <Services />, handle: { title: "Our Services" } },
-                            { path: "consultancy", element: <Consultancy />, handle: { title: "Consultancy Services" } },
-                            { path: "environmental-sustainability", element: <Enviromental />, handle: { title: "Enviromental Sustainability Services" } },
-                            { path: "training", element: <Training />, handle: { title: "Training Services" } },
-                            { path: "commercial-procurement", element: <Commercial />, handle: { title: "Commercial/Procurement Services" } },
-                            { path: "technical", element: <Technical />, handle: { title: "Technical Services" } },
-                            { path: "management-systems", element: <Management />, handle: { title: "Management Systems Services" } },
-                            { path: "facilities-management", element: <Facilities />, handle: { title: "Facilities Management Services" } },
+                            { path: "consultancy", element: <Consultancy />, handle: { title: "Consultancy" } },
+                            { path: "environmental-sustainability", element: <Enviromental />, handle: { title: "Enviromental Sustainability" } },
+                            { path: "training", element: <Training />, handle: { title: "Training" } },
+                            { path: "commercial-procurement", element: <Commercial />, handle: { title: "Commercial/Procurement" } },
+                            { path: "technical", element: <Technical />, handle: { title: "Technical" } },
+                            { path: "management-systems", element: <Management />, handle: { title: "Management Systems" } },
+                            { path: "facilities-management", element: <Facilities />, handle: { title: "Facilities Management" } },
                         ]
                     },
                     { path: "why-us", element: <WhyUs />, handle: { title: "Why TAB HSE Services" } },
