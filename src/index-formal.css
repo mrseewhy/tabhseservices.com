@@ -8,50 +8,50 @@
     --font-body: "Barlow", ui-sans-serif, sans-serif;
     --font-mono: "DM Mono", ui-monospace, monospace;
 
-    /* ── Purple (Brand Primary — logo purple/magenta) ── */
-    --color-purple-darkest: #2A0040;
-    --color-purple-dark: #4E0A6E;
-    --color-purple: #8B1A8C;
-    --color-purple-mid: #A52EA5;
-    --color-purple-light: #D499D4;
-    --color-purple-tint: #F7EDF7;
+    /* ── Purple ── */
+    --color-purple-darkest: #2D0057;
+    --color-purple-dark: #4A0072;
+    --color-purple: #7B1FA2;
+    --color-purple-mid: #9C27B0;
+    --color-purple-light: #CE93D8;
+    --color-purple-tint: #F3E5F5;
 
-    /* ── Green (Brand Secondary / CTA — logo green) ── */
-    --color-green-dark: #005A2B;
-    --color-green: #00A550;
-    --color-green-mid: #00BF5F;
-    --color-green-bright: #34D679;
-    --color-green-light: #B3EECF;
-    --color-green-tint: #E6F9EF;
+    /* ── Green ── */
+    --color-green-dark: #1B5E20;
+    --color-green: #2E7D32;
+    --color-green-mid: #43A047;
+    --color-green-bright: #66BB6A;
+    --color-green-light: #C8E6C9;
+    --color-green-tint: #E8F5E9;
 
     /* ── Neutrals ── */
     --color-white: #FFFFFF;
     --color-charcoal: #1A1A2E;
-    --color-grey-dark: #3D3D4E;
-    --color-grey-mid: #7A7A8C;
-    --color-grey-light: #D1D1DF;
+    --color-grey-dark: #4A4A5A;
+    --color-grey-mid: #8A8A9A;
+    --color-grey-light: #D4D4E0;
     --color-off-white: #F7F7FA;
 
     /* ── Accent ── */
-    --color-gold: #F5A623;
+    --color-gold: #FFB300;
 
     /* ── Navbar ── */
     --color-nav-bg: #FFFFFF;
     --color-nav-border: #EEEEF4;
     --color-nav-shadow: 0 2px 24px rgba(26, 26, 46, 0.08);
-    --color-nav-link: #3D3D4E;
-    --color-nav-link-active: #8B1A8C;
+    --color-nav-link: #4A4A5A;
+    --color-nav-link-active: #7B1FA2;
 
     /* ── Mega dropdown ── */
     --color-dropdown-bg: #1A1A2E;
     --color-dropdown-border: rgba(255, 255, 255, 0.09);
-    --color-dropdown-header: rgba(139, 26, 140, 0.28);
+    --color-dropdown-header: rgba(123, 31, 162, 0.28);
 
     /* ── Shadows ── */
-    --shadow-sm: 0 2px 8px rgba(139, 26, 140, 0.08);
-    --shadow-md: 0 8px 24px rgba(139, 26, 140, 0.14);
-    --shadow-lg: 0 20px 60px rgba(139, 26, 140, 0.18);
-    --shadow-btn: 0 6px 20px rgba(0, 165, 80, 0.40);
+    --shadow-sm: 0 2px 8px rgba(123, 31, 162, 0.08);
+    --shadow-md: 0 8px 24px rgba(123, 31, 162, 0.14);
+    --shadow-lg: 0 20px 60px rgba(123, 31, 162, 0.18);
+    --shadow-btn: 0 6px 20px rgba(46, 125, 50, 0.40);
     --shadow-nav: 0 2px 24px rgba(26, 26, 46, 0.08);
 }
 

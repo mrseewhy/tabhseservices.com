@@ -1,8 +1,147 @@
+import type { JSX } from "react";
 
-const Footer = () => {
+export default function Footer(): JSX.Element {
     return (
-        <div>Footer</div>
-    )
-}
+        <footer className="relative overflow-hidden">
 
-export default Footer
+            {/* Background */}
+            <div className="absolute inset-0 -z-10">
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background:
+                            "linear-gradient(to top, rgba(10,10,18,0.98) 0%, rgba(10,10,18,0.94) 60%, rgba(10,10,18,0.90) 100%)",
+                    }}
+                />
+
+                {/* Subtle brand wash */}
+                <div
+                    className="absolute right-0 top-0 w-[500px] h-[300px]"
+                    style={{
+                        background:
+                            "radial-gradient(circle at top right, rgba(139,26,140,0.12), transparent 70%)",
+                        pointerEvents: "none",
+                    }}
+                />
+            </div>
+
+            <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-8 py-20">
+
+                {/* Top grid */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+                    {/* Brand */}
+                    <div>
+                        <h3 className="font-display font-bold text-white text-lg">
+                            TAB HSE Services
+                        </h3>
+                        <p className="mt-4 text-white/55 text-sm leading-[1.8] font-body">
+                            Professional consultancy helping organisations maintain
+                            compliance, protect employees, and foster environmental
+                            responsibility.
+                        </p>
+                    </div>
+
+                    {/* Services */}
+                    <div>
+                        <h4
+                            className="font-mono uppercase tracking-[0.12em] text-xs mb-5"
+                            style={{ color: "var(--color-purple-light)" }}
+                        >
+                            Services
+                        </h4>
+                        <ul className="space-y-3 text-sm text-white/65">
+                            <li className="hover:text-white transition-colors">
+                                <a href="#">Health & Safety Audits</a>
+                            </li>
+                            <li className="hover:text-white transition-colors">
+                                <a href="#">Environmental Compliance</a>
+                            </li>
+                            <li className="hover:text-white transition-colors">
+                                <a href="#">ISO Management Systems</a>
+                            </li>
+                            <li className="hover:text-white transition-colors">
+                                <a href="#">Risk Assessments</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Company */}
+                    <div>
+                        <h4
+                            className="font-mono uppercase tracking-[0.12em] text-xs mb-5"
+                            style={{ color: "var(--color-purple-light)" }}
+                        >
+                            Company
+                        </h4>
+                        <ul className="space-y-3 text-sm text-white/65">
+                            <li className="hover:text-white transition-colors">
+                                <a href="#">About Us</a>
+                            </li>
+                            <li className="hover:text-white transition-colors">
+                                <a href="#">Industries</a>
+                            </li>
+                            <li className="hover:text-white transition-colors">
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Contact Card */}
+                    <div>
+                        <div
+                            className="rounded-xl p-6 backdrop-blur-xl"
+                            style={{
+                                background: "rgba(255,255,255,0.05)",
+                                border: "1px solid rgba(255,255,255,0.12)",
+                            }}
+                        >
+                            <h4 className="font-display font-bold text-white text-sm mb-4">
+                                Get in Touch
+                            </h4>
+                            <p className="text-white/60 text-sm mb-4">
+                                Speak to our compliance specialists.
+                            </p>
+
+                            <a
+                                href="#contact"
+                                className="inline-flex items-center justify-center rounded-lg px-5 py-2.5
+                                    text-white font-display font-bold text-[0.75rem]
+                                    uppercase tracking-[0.12em]
+                                    transition-all duration-200 hover:brightness-110"
+                                style={{
+                                    background: "var(--color-green)",
+                                    boxShadow: "0 4px 16px rgba(0,165,80,0.35)",
+                                }}
+                            >
+                                Request Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Divider */}
+                <div
+                    className="mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-6"
+                    style={{
+                        borderTop: "1px solid rgba(255,255,255,0.10)",
+                    }}
+                >
+                    <p className="text-white/45 text-xs font-mono tracking-[0.08em]">
+                        © {new Date().getFullYear()} TAB HSE Services. All rights reserved.
+                    </p>
+
+                    <div className="flex gap-6 text-white/50 text-xs">
+                        <a href="#" className="hover:text-white transition-colors">
+                            Privacy Policy
+                        </a>
+                        <a href="#" className="hover:text-white transition-colors">
+                            Terms of Service
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    );
+}
