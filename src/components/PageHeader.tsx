@@ -99,21 +99,52 @@ interface PageHeaderProps {
     breadcrumbs?: { label: string; href?: string }[];
 }
 
-// ─── Breadcrumb auto-builder ──────────────────────────────────────────────────
-function useBreadcrumbs(override?: { label: string; href?: string }[]) {
+// // ─── Breadcrumb auto-builder ──────────────────────────────────────────────────
+// function useBreadcrumbs(override?: { label: string; href?: string }[]) {
+//     const location = useLocation();
+
+//     if (override) return override;
+
+//     const segments = location.pathname.split("/").filter(Boolean);
+//     const crumbs = [{ label: "Home", href: "/" }];
+
+//     segments.forEach((seg, i) => {
+//         const label = seg
+//             .replace(/-/g, " ")
+//             .replace(/\b\w/g, (c) => c.toUpperCase());
+//         const href = "/" + segments.slice(0, i + 1).join("/");
+//         crumbs.push({ label, href: i < segments.length - 1 ? href : undefined });
+//     });
+
+//     return crumbs;
+// }
+
+
+type Crumb = {
+    label: string;
+    href?: string;          // now optional
+};
+
+function useBreadcrumbs(override?: Crumb[]) {
     const location = useLocation();
 
     if (override) return override;
 
     const segments = location.pathname.split("/").filter(Boolean);
-    const crumbs = [{ label: "Home", href: "/" }];
+    const crumbs: Crumb[] = [{ label: "Home", href: "/" }];
 
     segments.forEach((seg, i) => {
         const label = seg
             .replace(/-/g, " ")
             .replace(/\b\w/g, (c) => c.toUpperCase());
-        const href = "/" + segments.slice(0, i + 1).join("/");
-        crumbs.push({ label, href: i < segments.length - 1 ? href : undefined });
+
+        const path = "/" + segments.slice(0, i + 1).join("/");
+
+        // Only add href if NOT the last segment
+        crumbs.push({
+            label,
+            ...(i < segments.length - 1 ? { href: path } : {}),
+        });
     });
 
     return crumbs;
