@@ -18,6 +18,7 @@ const Commercial = lazy(() => import("../pages/Commercial"))
 const Technical = lazy(() => import("../pages/Technical"))
 const Management = lazy(() => import("../pages/Management"))
 const Facilities = lazy(() => import("../pages/Facilities"))
+const NotFound = lazy(() => import("../pages/NotFound"))
 
 
 
@@ -27,25 +28,27 @@ export const router = createBrowserRouter([
             { index: true, element: <Home />, },
             {
                 element: <OtherLayout />, children: [
-                    { path: "about-us", element: <About />, handle: { title: "About Us" } },
+                    { path: "about-us", element: <About />, handle: { title: "About Us", cta: true } },
                     {
                         path: "our-services", children: [
-                            { index: true, element: <Services />, handle: { title: "Our Services" } },
-                            { path: "consultancy", element: <Consultancy />, handle: { title: "Consultancy" } },
-                            { path: "environmental-sustainability", element: <Enviromental />, handle: { title: "Enviromental Sustainability" } },
-                            { path: "training", element: <Training />, handle: { title: "Training" } },
-                            { path: "commercial-procurement", element: <Commercial />, handle: { title: "Commercial/Procurement" } },
-                            { path: "technical", element: <Technical />, handle: { title: "Technical" } },
-                            { path: "management-systems", element: <Management />, handle: { title: "Management Systems" } },
-                            { path: "facilities-management", element: <Facilities />, handle: { title: "Facilities Management" } },
+                            { index: true, element: <Services />, handle: { title: "Our Services", cta: true } },
+                            { path: "consultancy", element: <Consultancy />, handle: { title: "Consultancy", cta: true } },
+                            { path: "environmental-sustainability", element: <Enviromental />, handle: { title: "Enviromental Sustainability", cta: true } },
+                            { path: "training", element: <Training />, handle: { title: "Training", cta: true } },
+                            { path: "commercial-procurement", element: <Commercial />, handle: { title: "Commercial/Procurement", cta: true } },
+                            { path: "technical", element: <Technical />, handle: { title: "Technical", cta: true } },
+                            { path: "management-systems", element: <Management />, handle: { title: "Management Systems", cta: true } },
+                            { path: "facilities-management", element: <Facilities />, handle: { title: "Facilities Management", cta: true } },
                         ]
                     },
-                    { path: "why-us", element: <WhyUs />, handle: { title: "Why TAB HSE Services" } },
-                    { path: "contact-us", element: <Contact />, handle: { title: "Contact Us" } },
+                    { path: "why-us", element: <WhyUs />, handle: { title: "Why TAB HSE Services", cta: true } },
+                    { path: "contact-us", element: <Contact />, handle: { title: "Contact Us", cta: false } },
                 ]
             },
+            { path: '*', element: <NotFound /> }
 
         ]
-    }
+
+    },
 
 ])

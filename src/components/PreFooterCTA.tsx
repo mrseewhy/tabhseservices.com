@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { Link } from "react-router-dom";
 
 export default function PreFooterCTA(): JSX.Element {
     return (
@@ -75,8 +76,8 @@ export default function PreFooterCTA(): JSX.Element {
                         >
                             <div className="space-y-6">
 
-                                <a
-                                    href="#contact"
+                                <Link
+                                    to="contact"
                                     className="group w-full flex items-center justify-center gap-2.5 rounded-lg px-8 py-3.5
                                         text-white font-display font-bold text-[0.85rem]
                                         uppercase tracking-[0.12em]
@@ -101,10 +102,10 @@ export default function PreFooterCTA(): JSX.Element {
                                             strokeLinejoin="round"
                                         />
                                     </svg>
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="#services"
+                                <Link
+                                    to="our-services"
                                     className="w-full flex items-center justify-center rounded-lg px-8 py-3.5
                                         font-display font-bold text-[0.85rem]
                                         uppercase tracking-[0.12em]
@@ -116,7 +117,7 @@ export default function PreFooterCTA(): JSX.Element {
                                     }}
                                 >
                                     View Services
-                                </a>
+                                </Link>
 
                             </div>
                         </div>

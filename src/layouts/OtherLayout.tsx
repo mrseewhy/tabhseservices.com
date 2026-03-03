@@ -6,11 +6,12 @@ const OtherLayout = () => {
     const matches = useMatches();
     const current = matches[matches.length - 1]
     const pageTitle = current?.handle?.title
+    const cta = current?.handle?.cta
     return (
         <div>
             {pageTitle && <PageHeader title={pageTitle} />}
             <Outlet />
-            <PreFooterCTA />
+            {cta && <PreFooterCTA />}
         </div>
     )
 }
