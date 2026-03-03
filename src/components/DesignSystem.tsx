@@ -8,7 +8,6 @@
  *   Neutral → Charcoal, Off-white, Greys
  */
 
-import React, { useState } from "react";
 
 // ─────────────────────────────────────────────
 // 1. COLOUR TOKENS  (mirrors your index.css)
